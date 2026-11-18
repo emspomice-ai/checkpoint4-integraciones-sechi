@@ -34,7 +34,7 @@ Además de Gmail, el sistema recibe pedidos por un **formulario de n8n** (WhatsA
 
 ## Importar y configurar
 1. n8n → *Import from file* → `checkpoint4_emiliano_coronel-pomice.json`.
-2. El archivo **no contiene secretos**. Seleccioná tus propias credenciales en los nodos de Gmail (Trigger y Create Draft), Airtable, Slack y Google Gemini.
+2. El archivo **no contiene credenciales**. Seleccioná tus propias credenciales en los nodos de Gmail (Trigger y Create Draft), Airtable, Slack y Google Gemini.
 3. Slack: elegí el canal de avisos en los dos nodos de Slack nuevos.
 4. Airtable: el archivo apunta a las bases y tablas de Sechi (`clientes`, `casos`, `memoria_clientes`); para usarlo en otra cuenta hay que recrearlas con los campos indicados en las notas del lienzo.
 5. Los workers W1, W2 y W3 del Módulo 2 deben estar publicados en la misma instancia.
@@ -122,6 +122,5 @@ Este repositorio no contiene correos, nombres, teléfonos ni credenciales de cli
 - Si un correo trae varios pedidos, se procesa solo el primero y se avisa por Slack.
 - El mail llega reenviado a mano a la casilla del agente (la casilla de Logística está en otro proveedor).
 - El Manager depende de la Biblioteca de modelos y no usa el peso que el cliente escribe en el mail; si el modelo no está, escala a una persona.
-- La credencial de Airtable alcanza más de una base; una mejora posible es acotarla a la base de solicitudes.
 - El Clasificador del Manager de M3 no es determinista: a veces escala una consulta válida.
 - El extractor devuelve texto; una validación en código descarta lo inválido en vez de confiar en el modelo.
